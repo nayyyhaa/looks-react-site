@@ -1,33 +1,69 @@
 import React from "react";
+//styled
+import styled from "styled-components";
+import {
+  StyledAbout,
+  StyledDescription,
+  StyledImage,
+} from "../toolkit/styles/styles";
 import servicesData from "../toolkit/data/servicesData";
 import home2 from "../toolkit/assets/home2.png";
 
 const ServicesSection = () => {
   return (
-    <div className="services-section">
-      <div className="description">
+    <StyledService>
+      <StyledDescription>
         <h2>
           High <span>quality</span> services.
         </h2>
-        <div className="cards">
+        <StyledCards>
           {servicesData.map((service) => {
             return (
-              <div key={service.name} className="card">
+              <StyledCard key={service.name}>
                 <div className="icon">
                   <img alt={service.name} src={service.img} />
                   <h3>{service.name}</h3>
                 </div>
                 <p>{service.description}</p>
-              </div>
+              </StyledCard>
             );
           })}
-        </div>
-      </div>
-      <div className="image">
+        </StyledCards>
+      </StyledDescription>
+      <StyledImage>
         <img src={home2} alt="services" />
-      </div>
-    </div>
+      </StyledImage>
+    </StyledService>
   );
 };
+
+const StyledService = styled(StyledAbout)`
+  h2 {
+    padding-bottom: 5rem;
+  }
+  p {
+    width: 70%;
+    padding: 2rem 0rem 4rem 0rem;
+  }
+`;
+
+const StyledCards = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const StyledCard = styled.div`
+  flex-basis: 20rem;
+  .icon {
+    display: flex;
+    align-items: center;
+    h3 {
+      margin-left: 1rem;
+      background: white;
+      color: black;
+      padding: 1rem;
+    }
+  }
+`;
 
 export default ServicesSection;

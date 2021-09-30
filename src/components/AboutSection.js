@@ -1,30 +1,37 @@
 import React from "react";
 import steveCam from "../toolkit/assets/home1.png";
+//styled
+import {
+  StyledAbout,
+  StyledDescription,
+  StyledImage,
+  StyledHide,
+} from "../toolkit/styles/styles";
 
 const AboutSection = () => {
   return (
-    <div>
-      <div className="description">
+    <StyledAbout>
+      <StyledDescription>
         <div className="title">
-          <div className="hide">
+          <StyledHide>
             <h2>You dream and</h2>
-          </div>
-          <div className="hide">
+          </StyledHide>
+          <StyledHide>
             <h2>
               we make it <span>true</span>.
             </h2>
-          </div>
+          </StyledHide>
         </div>
         <p>
           With amazing videograpgy and photography skills our proffessions will
           help you create your dream project come in life.
         </p>
         <button>Contact Us</button>
-      </div>
-      <div className="image">
+      </StyledDescription>
+      <StyledImage>
         <img src={steveCam} alt="Steve with camera" />
-      </div>
-    </div>
+      </StyledImage>
+    </StyledAbout>
   );
 };
 
