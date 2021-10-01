@@ -2,10 +2,6 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 
-    .title-text {
-        font-family: "Lobster", cursive;
-    }
-
     *{
         margin: 0;
         padding: 0;
@@ -52,6 +48,8 @@ const GlobalStyle = createGlobalStyle`
     }
     a {
         font-size: 1.1rem;
+        color: white;
+        text-decoration: none;
     }
     span {
         font-weight: bold;

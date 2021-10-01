@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import steveCam from "../toolkit/assets/home1.png";
 //styled
 import {
@@ -26,7 +27,9 @@ const AboutSection = () => {
           With amazing videograpgy and photography skills our proffessions will
           help you create your dream project come in life.
         </p>
-        <button>Contact Us</button>
+        <button>
+          <Link to="contact">Contact Us</Link>
+        </button>
       </StyledDescription>
       <StyledImage>
         <img src={steveCam} alt="Steve with camera" />

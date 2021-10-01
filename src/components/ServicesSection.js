@@ -12,7 +12,10 @@ import home2 from "../toolkit/assets/home2.png";
 const ServicesSection = () => {
   return (
     <StyledService>
-      <StyledDescription>
+      <StyledImage>
+        <img src={home2} alt="services" />
+      </StyledImage>
+      <StyledServiceDescription>
         <h2>
           High <span>quality</span> services.
         </h2>
@@ -29,15 +32,13 @@ const ServicesSection = () => {
             );
           })}
         </StyledCards>
-      </StyledDescription>
-      <StyledImage>
-        <img src={home2} alt="services" />
-      </StyledImage>
+      </StyledServiceDescription>
     </StyledService>
   );
 };
 
 const StyledService = styled(StyledAbout)`
+  min-height: 100vh;
   h2 {
     padding-bottom: 5rem;
   }
@@ -45,6 +46,10 @@ const StyledService = styled(StyledAbout)`
     width: 70%;
     padding: 2rem 0rem 4rem 0rem;
   }
+`;
+
+const StyledServiceDescription = styled(StyledDescription)`
+  padding: 0 0 0 5rem;
 `;
 
 const StyledCards = styled.div`
