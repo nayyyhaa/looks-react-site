@@ -22,7 +22,12 @@ const MovieDetails = () => {
   return (
     <>
       {movie && (
-        <StyledDetails variants={pageAnimation} initial="hidden" animate="show">
+        <StyledDetails
+          variants={pageAnimation}
+          initial="hidden"
+          animate="show"
+          exit="exit"
+        >
           <StyledHeading>
             <h2>{movie.title}</h2>
             <div className="line"></div>

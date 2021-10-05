@@ -10,7 +10,12 @@ import {pageAnimation} from "../toolkit/helpers/animation";
 const OurWork = () => {
   let [moviesData, setMoviesData] = useState(MovieState);
   return (
-    <StyledWork variants={pageAnimation} initial="hidden" animate="show">
+    <StyledWork
+      variants={pageAnimation}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+    >
       <h1>Our Work</h1>
       {moviesData.map((movie) => {
         return (

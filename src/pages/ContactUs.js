@@ -5,7 +5,12 @@ import {pageAnimation} from "../toolkit/helpers/animation";
 
 const ContactUs = () => {
   return (
-    <motion.div variants={pageAnimation} initial="hidden" animate="show">
+    <motion.div
+      variants={pageAnimation}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+    >
       <h1>contactus</h1>
     </motion.div>
   );
