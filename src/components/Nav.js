@@ -48,7 +48,12 @@ const StyledNav = styled.nav`
 
     li {
       list-style: none;
+      padding: 0 0.5rem;
     }
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 1rem 2rem;
   }
 `;
 export default Nav;

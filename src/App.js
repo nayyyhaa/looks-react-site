@@ -6,6 +6,7 @@ import Nav from "./components/Nav";
 import AboutUs from "./pages/AboutUs";
 import OurWork from "./pages/OurWork";
 import ContactUs from "./pages/ContactUs";
+import MovieDetails from "./pages/MovieDetails";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
         <Nav />
         <Switch>
           <Route path="/" exact component={AboutUs} />
-          <Route path="/work" component={OurWork} />
+          <Route path="/work" exact component={OurWork} />
+          <Route path="/work/:id" component={MovieDetails} />
           <Route path="/contact" component={ContactUs} />
         </Switch>
       </Router>
