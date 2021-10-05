@@ -2,9 +2,7 @@ import React from "react";
 //styled
 import styled from "styled-components";
 import {
-  StyledAbout,
-  StyledDescription,
-  StyledImage,
+  StyledAbout
 } from "../toolkit/styles/styles";
 import faqData from "../toolkit/data/faqData";
 

@@ -3,6 +3,9 @@ import { useHistory } from "react-router-dom";
 import { MovieState } from "../toolkit/data/movieState";
 //styled
 import styled from "styled-components";
+//animations
+import { motion } from "framer-motion";
+import {pageAnimation} from "../toolkit/helpers/animation";
 
 const MovieDetails = () => {
   let [moviesData, setMoviesData] = useState(MovieState);
@@ -19,7 +22,7 @@ const MovieDetails = () => {
   return (
     <>
       {movie && (
-        <StyledDetails>
+        <StyledDetails variants={pageAnimation} initial="hidden" animate="show">
           <StyledHeading>
             <h2>{movie.title}</h2>
             <div className="line"></div>
@@ -39,7 +42,7 @@ const MovieDetails = () => {
   );
 };
 
-const StyledDetails = styled.div`
+const StyledDetails = styled(motion.div)`
   min-height: 100vh;
 `;
 

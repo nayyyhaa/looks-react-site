@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import steveCam from "../toolkit/assets/home1.png";
 //styled

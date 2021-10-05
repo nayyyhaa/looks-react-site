@@ -3,11 +3,14 @@ import { Link } from "react-router-dom";
 import { MovieState } from "../toolkit/data/movieState";
 //styled
 import styled from "styled-components";
+//animations
+import { motion } from "framer-motion";
+import {pageAnimation} from "../toolkit/helpers/animation";
 
 const OurWork = () => {
   let [moviesData, setMoviesData] = useState(MovieState);
   return (
-    <StyledWork>
+    <StyledWork variants={pageAnimation} initial="hidden" animate="show">
       <h1>Our Work</h1>
       {moviesData.map((movie) => {
         return (
@@ -24,7 +27,7 @@ const OurWork = () => {
   );
 };
 
-const StyledWork = styled.div`
+const StyledWork = styled(motion.div)`
   min-height: 100vh;
   overflow: hidden;
   padding: 1rem 5rem;
