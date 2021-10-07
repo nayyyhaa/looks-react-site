@@ -36,6 +36,8 @@ const StyledWork = styled(motion.div)`
   min-height: 100vh;
   overflow: hidden;
   padding: 1rem 5rem;
+  background: white;
+  color: black;
 
   h1 {
     font-size: 4rem;

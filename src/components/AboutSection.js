@@ -1,6 +1,13 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+//animations
+import { motion } from "framer-motion";
+import {
+  titleAnimation,
+  fade,
+  imageAnimation,
+} from "../toolkit/helpers/animation";
+import Wave from "./Wave";
 import steveCam from "../toolkit/assets/home1.png";
 //styled
 import {
@@ -16,25 +23,26 @@ const AboutSection = () => {
       <StyledDescription>
         <div className="title">
           <StyledHide>
-            <h2>You dream and</h2>
+            <motion.h2 variants={titleAnimation}>You dream and</motion.h2>
           </StyledHide>
           <StyledHide>
-            <h2>
+            <motion.h2 variants={titleAnimation}>
               we make it <span>true</span>.
-            </h2>
+            </motion.h2>
           </StyledHide>
         </div>
-        <p>
+        <motion.p variants={fade}>
           With amazing videograpgy and photography skills our proffessions will
           help you create your dream project come in life.
-        </p>
-        <button>
+        </motion.p>
+        <motion.button variants={fade}>
           <Link to="contact">Contact Us</Link>
-        </button>
+        </motion.button>
       </StyledDescription>
       <StyledImage>
-        <img src={steveCam} alt="Steve with camera" />
+        <motion.img src={steveCam} alt="Steve with camera" variants={imageAnimation} />
       </StyledImage>
+      <Wave />
     </StyledAbout>
   );
 };
