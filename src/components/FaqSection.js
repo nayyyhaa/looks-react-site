@@ -1,32 +1,34 @@
 import React from "react";
 //styled
 import styled from "styled-components";
-import {
-  StyledAbout
-} from "../toolkit/styles/styles";
+import { StyledAbout } from "../toolkit/styles/styles";
+//animations
+import { AnimateSharedLayout } from "framer-motion";
+//data store
 import faqData from "../toolkit/data/faqData";
+//reusable component
+import Toggle from "./Toggle";
 
-const ServicesSection = () => {
+const FaqSection = () => {
   return (
     <StyledFaq>
       <div className="description">
         <h2>
           <span>FAQ</span>
         </h2>
-        <div className="animateSharedLayout">
-          {faqData.map((faq) => {
-            return (
-              <div key={faq.question} className="question">
-                <h4>{faq.question}</h4>
+        {faqData.map((faq) => {
+          return (
+            <AnimateSharedLayout key={faq.question}>
+              <Toggle title={faq.question}>
                 <div className="answer">
                   <p>{faq.small_answer}</p>
                   <p>{faq.full_answer}</p>
                 </div>
-                <div className="faq-line"></div>
-              </div>
-            );
-          })}
-        </div>
+              </Toggle>
+              <div className="faq-line"></div>
+            </AnimateSharedLayout>
+          );
+        })}
       </div>
     </StyledFaq>
   );
@@ -47,9 +49,13 @@ const StyledFaq = styled(StyledAbout)`
     margin: 2rem 0rem;
     width: 100%;
   }
-  .question {
+  .question-container {
     padding: 3rem 0rem;
     cursor: pointer;
+  }
+  .question {
+    display: flex;
+    justify-content: space-between;
   }
   .answer {
     padding: 2rem 0rem;
@@ -58,4 +64,4 @@ const StyledFaq = styled(StyledAbout)`
     }
   }
 `;
-export default ServicesSection;
+export default FaqSection;
