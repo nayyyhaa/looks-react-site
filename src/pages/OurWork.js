@@ -1,11 +1,19 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { MovieState } from "../toolkit/data/movieState";
 //styled
 import styled from "styled-components";
+import { StyledImage } from "../toolkit/styles/styles";
 //animations
 import { motion } from "framer-motion";
-import {pageAnimation} from "../toolkit/helpers/animation";
+import {
+  pageAnimation,
+  fade,
+  imageAnimation,
+  lineAnimation,
+  pageSliderAnimation,
+  sliderContainerAnimation,
+} from "../toolkit/helpers/animation";
 
 const OurWork = () => {
   let [moviesData, setMoviesData] = useState(MovieState);
@@ -16,14 +24,26 @@ const OurWork = () => {
       animate="show"
       exit="exit"
     >
-      <h1>Our Work</h1>
+      <motion.div variants={sliderContainerAnimation}>
+      <StyledFrame1 variants={pageSliderAnimation}></StyledFrame1>
+      <StyledFrame2 variants={pageSliderAnimation}></StyledFrame2>
+      <StyledFrame3 variants={pageSliderAnimation}></StyledFrame3>
+      <StyledFrame4 variants={pageSliderAnimation}></StyledFrame4>
+      </motion.div>
+      <motion.h1 variants={fade}>Our Work</motion.h1>
       {moviesData.map((movie) => {
         return (
           <StyledMovie key={movie.title}>
-            <h2>{movie.title}</h2>
-            <div className="line"></div>
+            <motion.h2 variants={fade}>{movie.title}</motion.h2>
+            <motion.div variants={lineAnimation} className="line"></motion.div>
             <Link to={movie.url}>
-              <img src={movie.mainImg} alt={movie.title} />
+              <StyledImage>
+                <motion.img
+                  variants={imageAnimation}
+                  src={movie.mainImg}
+                  alt={movie.title}
+                />
+              </StyledImage>
             </Link>
           </StyledMovie>
         );
@@ -60,9 +80,7 @@ const StyledMovie = styled.div`
   }
 
   img {
-    width: 100%;
     height: 75vh;
-    object-fit: cover;
     cursor: pointer;
     filter: brightness(30%);
     transition: all 0.3s ease-in;
@@ -71,6 +89,26 @@ const StyledMovie = styled.div`
       filter: brightness(100%);
     }
   }
+`;
+
+//frame animation
+const StyledFrame1 = styled(motion.div)`
+  position: fixed;
+  left: 0;
+  top: 10%;
+  width: 100%;
+  height: 100vh;
+  background: #fffebf;
+  z-index: 2;
+`;
+const StyledFrame2 = styled(StyledFrame1)`
+  background: #ff8efb;
+`;
+const StyledFrame3 = styled(StyledFrame1)`
+  background: #8ed2ff;
+`;
+const StyledFrame4 = styled(StyledFrame1)`
+  background: #8effa0;
 `;
 
 export default OurWork;
