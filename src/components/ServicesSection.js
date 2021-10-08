@@ -8,10 +8,19 @@ import {
 } from "../toolkit/styles/styles";
 import servicesData from "../toolkit/data/servicesData";
 import home2 from "../toolkit/assets/home2.png";
+import { scrollRevealAnimation } from "../toolkit/helpers/animation";
+import useScroll from "../toolkit/helpers/useScroll";
 
 const ServicesSection = () => {
+  let [element, controls] = useScroll();
+
   return (
-    <StyledService>
+    <StyledService
+      ref={element}
+      variants={scrollRevealAnimation}
+      initial="hidden"
+      animate={controls}
+    >
       <StyledImage>
         <img src={home2} alt="services" />
       </StyledImage>

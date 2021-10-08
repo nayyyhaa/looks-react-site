@@ -8,10 +8,19 @@ import { AnimateSharedLayout } from "framer-motion";
 import faqData from "../toolkit/data/faqData";
 //reusable component
 import Toggle from "./Toggle";
+import { scrollRevealAnimation } from "../toolkit/helpers/animation";
+import useScroll from "../toolkit/helpers/useScroll";
 
 const FaqSection = () => {
+  let [element, controls] = useScroll();
+
   return (
-    <StyledFaq>
+    <StyledFaq
+      ref={element}
+      variants={scrollRevealAnimation}
+      initial="hidden"
+      animate={controls}
+    >
       <div className="description">
         <h2>
           <span>FAQ</span>

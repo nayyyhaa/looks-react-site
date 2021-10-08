@@ -12,11 +12,28 @@ import {
   imageAnimation,
   lineAnimation,
   pageSliderAnimation,
-  sliderContainerAnimation,
+  sliderContainerAnimation
 } from "../toolkit/helpers/animation";
+import useScroll from "../toolkit/helpers/useScroll";
 
 const OurWork = () => {
   let [moviesData, setMoviesData] = useState(MovieState);
+  let [element, controls] = useScroll();
+  let [element1, controls1] = useScroll();
+  let [element2, controls2] = useScroll();
+
+  const checkRef = (index) => {
+    if (index === 0) return element;
+    else if (index === 1) return element1;
+    return element2;
+  };
+
+  const checkControl = (index) => {
+    if (index === 0) return controls;
+    else if (index === 1) return controls1;
+    return controls2;
+  };
+
   return (
     <StyledWork
       variants={pageAnimation}
@@ -25,15 +42,21 @@ const OurWork = () => {
       exit="exit"
     >
       <motion.div variants={sliderContainerAnimation}>
-      <StyledFrame1 variants={pageSliderAnimation}></StyledFrame1>
-      <StyledFrame2 variants={pageSliderAnimation}></StyledFrame2>
-      <StyledFrame3 variants={pageSliderAnimation}></StyledFrame3>
-      <StyledFrame4 variants={pageSliderAnimation}></StyledFrame4>
+        <StyledFrame1 variants={pageSliderAnimation}></StyledFrame1>
+        <StyledFrame2 variants={pageSliderAnimation}></StyledFrame2>
+        <StyledFrame3 variants={pageSliderAnimation}></StyledFrame3>
+        <StyledFrame4 variants={pageSliderAnimation}></StyledFrame4>
       </motion.div>
       <motion.h1 variants={fade}>Our Work</motion.h1>
-      {moviesData.map((movie) => {
+      {moviesData.map((movie, index) => {
         return (
-          <StyledMovie key={movie.title}>
+          <StyledMovie
+            key={movie.title}
+            ref={checkRef(index)}
+            variants={fade}
+            initial="hidden"
+            animate={checkControl(index)}
+          >
             <motion.h2 variants={fade}>{movie.title}</motion.h2>
             <motion.div variants={lineAnimation} className="line"></motion.div>
             <Link to={movie.url}>
@@ -69,7 +92,7 @@ const StyledWork = styled(motion.div)`
   }
 `;
 
-const StyledMovie = styled.div`
+const StyledMovie = styled(motion.div)`
   padding-bottom: 5rem;
 
   .line {

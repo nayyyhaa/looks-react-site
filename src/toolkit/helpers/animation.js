@@ -41,7 +41,7 @@ export const fade = {
   show: {
     opacity: 1,
     transition: {
-      duration: 0.75,
+      duration: 2.5,
       ease: "easeOut",
     },
   },
@@ -68,7 +68,7 @@ export const lineAnimation = {
   },
   show: {
     width: "100%",
-    transition: { duration: 1 },
+    transition: { duration: 2.5 },
   },
 };
 
@@ -99,3 +99,15 @@ export const sliderContainerAnimation = {
     },
   },
 };
+
+export const scrollRevealAnimation = {
+  hidden: { opacity: 0, scale: 1.2, transition: { duration: 0.5 } },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
