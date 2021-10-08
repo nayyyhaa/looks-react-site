@@ -31,6 +31,9 @@ const StyledNav = styled.nav`
   align-items: center;
   justify-content: space-between;
   background: #282828;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
   #title-text {
     font-family: "Lobster", cursive;
