@@ -5,7 +5,8 @@ import { MovieState } from "../toolkit/data/movieState";
 import styled from "styled-components";
 //animations
 import { motion } from "framer-motion";
-import {pageAnimation} from "../toolkit/helpers/animation";
+import { pageAnimation } from "../toolkit/helpers/animation";
+import ScrollToTop from "../components/ScrollToTop";
 
 const MovieDetails = () => {
   let [moviesData, setMoviesData] = useState(MovieState);
@@ -41,6 +42,7 @@ const MovieDetails = () => {
           <StyledImageDisplay>
             <img src={movie.secondaryImg} alt="movie" />
           </StyledImageDisplay>
+          <ScrollToTop />
         </StyledDetails>
       )}
     </>
@@ -105,7 +107,6 @@ const StyledImageDisplay = styled.div`
     object-fit: cover;
   }
 `;
-
 
 //component
 const Award = ({ award }) => {

@@ -15,6 +15,7 @@ import {
   sliderContainerAnimation
 } from "../toolkit/helpers/animation";
 import useScroll from "../toolkit/helpers/useScroll";
+import ScrollToTop from "../components/ScrollToTop";
 
 const OurWork = () => {
   let [moviesData, setMoviesData] = useState(MovieState);
@@ -71,6 +72,7 @@ const OurWork = () => {
           </StyledMovie>
         );
       })}
+      <ScrollToTop />
     </StyledWork>
   );
 };

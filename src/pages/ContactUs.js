@@ -5,6 +5,7 @@ import { StyledHide } from "../toolkit/styles/styles";
 //animations
 import { motion } from "framer-motion";
 import { pageAnimation, titleAnimation } from "../toolkit/helpers/animation";
+import ScrollToTop from "../components/ScrollToTop";
 
 const ContactUs = () => {
   return (
@@ -37,6 +38,7 @@ const ContactUs = () => {
           </motion.div>
         </StyledHide>
       </StyledSocial>
+      <ScrollToTop />
     </StyledContact>
   );
 };
@@ -62,7 +64,7 @@ const StyledSocial = styled(motion.div)`
     height: 2rem;
     width: 2rem;
     border-radius: 50%;
-    background-color:black;
+    background-color: black;
   }
 
   div {
@@ -70,7 +72,6 @@ const StyledSocial = styled(motion.div)`
     height: 10vh;
     justify-content: space-between;
     align-items: center;
-
   }
   a {
     color: black;
