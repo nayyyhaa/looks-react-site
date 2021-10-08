@@ -65,6 +65,18 @@ const StyledFaq = styled(StyledAbout)`
   .question {
     display: flex;
     justify-content: space-between;
+
+    h4 {
+      text-align: start;
+
+      @media (max-width: 1500px) {
+        font-size: 1.5rem;
+      }
+
+      @media (max-width: 750px) {
+        font-size: 1rem;
+      }
+    }
   }
   .answer {
     padding: 2rem 0rem;

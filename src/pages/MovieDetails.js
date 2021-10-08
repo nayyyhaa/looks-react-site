@@ -81,12 +81,21 @@ const StyledAwards = styled.div`
   margin: 1rem 5rem;
   align-items: center;
   justify-content: space-around;
+
+  @media (max-width: 1500px) {
+    display: block;
+    margin: 2rem 2rem;
+  }
 `;
 
 const StyledAward = styled.div`
   padding: 5rem;
   h3 {
     font-size: 2rem;
+
+    @media (max-width: 1500px) {
+      font-size: 1.5rem;
+    }
   }
   .line {
     width: 100%;
@@ -96,6 +105,10 @@ const StyledAward = styled.div`
   }
   p {
     padding: 2rem 0rem;
+  }
+
+  @media (max-width: 1500px) {
+    padding: 2rem;
   }
 `;
 

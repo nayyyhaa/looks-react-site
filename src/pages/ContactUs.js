@@ -53,6 +53,14 @@ const StyledContact = styled(motion.div)`
   h1 {
     font-size: 3rem;
     margin: 3rem 0;
+
+    @media (max-width: 1500px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 1500px) {
+    padding: 2rem;
   }
 `;
 
@@ -77,6 +85,10 @@ const StyledSocial = styled(motion.div)`
     color: black;
     font-size: 2rem;
     margin-left: 1rem;
+
+    @media (max-width: 1500px) {
+      font-size: 1.25rem;
+    }
   }
 `;
 

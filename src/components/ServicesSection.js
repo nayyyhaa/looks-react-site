@@ -55,15 +55,35 @@ const StyledService = styled(StyledAbout)`
     width: 70%;
     padding: 2rem 0rem 4rem 0rem;
   }
+
+  @media screen and (max-width: 750px) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 `;
 
 const StyledServiceDescription = styled(StyledDescription)`
   padding: 0 0 0 5rem;
+
+  h2 {
+    text-align: center;
+  }
+  
+  @media screen and (max-width: 750px) {
+    padding: 0;
+  }
+
 `;
 
 const StyledCards = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
+
+  @media screen and (max-width: 750px) {
+    justify-content: center;
+  }
 `;
 
 const StyledCard = styled.div`
@@ -76,6 +96,18 @@ const StyledCard = styled.div`
       background: white;
       color: black;
       padding: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 1140px) {
+    flex-basis: 15rem;
+    .icon img {
+      width: 10%;
+    }
+    p {
+      font-size: 1rem;
+      width: 100%;
+      padding: 1rem 0rem 2rem;
     }
   }
 `;

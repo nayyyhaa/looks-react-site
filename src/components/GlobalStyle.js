@@ -10,6 +10,10 @@ const GlobalStyle = createGlobalStyle`
     html {
         @media screen and (max-width: 1700px) {
             font-size: 75%;
+
+            h2 {
+                font-size: 2rem;
+            }
         }
     }
     body {
