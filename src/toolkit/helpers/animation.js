@@ -41,7 +41,7 @@ export const fade = {
   show: {
     opacity: 1,
     transition: {
-      duration: 2.5,
+      duration: 1.5,
       ease: "easeOut",
     },
   },
@@ -68,7 +68,7 @@ export const lineAnimation = {
   },
   show: {
     width: "100%",
-    transition: { duration: 2.5 },
+    transition: { duration: 1.25 },
   },
 };
 
@@ -94,6 +94,7 @@ export const sliderContainerAnimation = {
   show: {
     opacity: 1,
     transition: {
+      duration: 0.1,
       ease: "easeOut",
       staggerChildren: 0.1,
     },

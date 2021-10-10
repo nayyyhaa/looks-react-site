@@ -1,9 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 //styled
 import styled from "styled-components";
+//animations
+import { motion } from "framer-motion";
+import { lineAnimation } from "../toolkit/helpers/animation";
 
 const Nav = () => {
+  const { pathname } = useLocation();
+  console.log(pathname);
   return (
     <StyledNav>
       <h1 id="title-text">
@@ -12,12 +17,35 @@ const Nav = () => {
       <ul>
         <li>
           <Link to="/">About Us</Link>
+          {pathname === "/" && (
+            <motion.div
+              variants={lineAnimation}
+              initial="hidden"
+              animate="show"
+            ></motion.div>
+          )}
         </li>
         <li>
           <Link to="/work">Our Work</Link>
+
+          {pathname === "/work" && (
+            <motion.div
+              variants={lineAnimation}
+              initial="hidden"
+              animate="show"
+            ></motion.div>
+          )}
         </li>
         <li>
           <Link to="/contact">Contact Us</Link>
+
+          {pathname === "/contact" && (
+            <motion.div
+              variants={lineAnimation}
+              initial="hidden"
+              animate="show"
+            ></motion.div>
+          )}
         </li>
       </ul>
     </StyledNav>
@@ -39,7 +67,7 @@ const StyledNav = styled.nav`
     font-family: "Lobster", cursive;
     flex: 1;
     a {
-      font-size: 2rem;
+      font-size: 1.25rem;
     }
   }
 
@@ -52,6 +80,12 @@ const StyledNav = styled.nav`
     li {
       list-style: none;
       padding: 0 0.5rem;
+
+      div {
+        height: 0.25rem;
+        width: 95%;
+        background: #23d997;
+      }
     }
   }
 

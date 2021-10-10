@@ -8,11 +8,11 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
     html {
-        @media screen and (max-width: 1700px) {
+        @media screen and (max-width: 1200px) {
             font-size: 75%;
 
             h2 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
         }
     }
@@ -40,7 +40,7 @@ const GlobalStyle = createGlobalStyle`
     }
     h2 {
         font-weight: lighter;
-        font-size: 4rem;
+        font-size: 3rem;
     }
     
     h3 {

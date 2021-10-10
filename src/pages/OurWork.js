@@ -85,7 +85,7 @@ const StyledWork = styled(motion.div)`
   color: black;
 
   h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     text-align: center;
   }
 
